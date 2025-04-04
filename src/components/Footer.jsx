@@ -31,7 +31,6 @@ const Footer = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-6">
-            {/* Sezione Social Icons */}
             <div className="row">
               <div className="col mb-2">
                 <i className="bi bi-facebook footer-icon me-2"></i>
@@ -41,7 +40,6 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Sezione Links */}
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
               {[
                 [
@@ -68,7 +66,6 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Bottone Service Code */}
             <div className="row">
               <div className="col mb-2">
                 <button
@@ -80,14 +77,12 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Copyright e Data Dinamica */}
             <div className="row">
               <div className="col mb-2 mt-2 copyright text-center">
                 © 1997-{new Date().getFullYear()} Netflix, Inc.
               </div>
             </div>
 
-            {/* Data aggiornata dinamicamente */}
             <div className="row">
               <div className="col text-center">
                 <small>{currentDate}</small>

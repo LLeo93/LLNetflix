@@ -8,7 +8,7 @@ const FilmGallery = ({ title, searchTerm }) => {
   const [activeMovieIndex, setActiveMovieIndex] = useState(0);
   const [slidesPerView, setSlidesPerView] = useState(5);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [selectedMovie, setSelectedMovie] = useState(null); // Per gestire il film selezionato
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   const getSlidesPerView = () => {
     if (windowWidth < 576) return 1;
@@ -68,7 +68,6 @@ const FilmGallery = ({ title, searchTerm }) => {
   }
 
   const handleClick = (movieID) => {
-    // Se il film è già selezionato, lo deselezioniamo, altrimenti lo selezioniamo
     setSelectedMovie(selectedMovie === movieID ? null : movieID);
   };
 
@@ -88,16 +87,10 @@ const FilmGallery = ({ title, searchTerm }) => {
                 <Carousel.Item key={index} className="bg-black text-white">
                   <Row className="d-flex justify-content-center">
                     {group.map((movie) => (
-                      <Col
-                        key={movie.imdbID}
-                        xs={12} // 1 colonna per smartphone
-                        sm={4} // 3 colonne per schermi più grandi di 576px
-                        md={4} // 3 colonne per tablet
-                        lg={2} // 5 colonne per desktop
-                      >
+                      <Col key={movie.imdbID} xs={12} sm={4} md={4} lg={2}>
                         <div
                           className="carousel-item-wrapper position-relative"
-                          onClick={() => handleClick(movie.imdbID)} // Gestiamo il click per il toggle
+                          onClick={() => handleClick(movie.imdbID)}
                           style={{
                             cursor: 'pointer',
                             borderRadius: '8px',
@@ -117,7 +110,7 @@ const FilmGallery = ({ title, searchTerm }) => {
                               transition: 'transform 0.3s ease-in-out',
                             }}
                           />
-                          {/* Effetto hover per il testo */}
+
                           <div
                             className={`carousel-item-text position-absolute w-100 text-center p-3 text-white ${
                               selectedMovie === movie.imdbID
@@ -134,7 +127,7 @@ const FilmGallery = ({ title, searchTerm }) => {
                             <h5>{movie.Title}</h5>
                             <p>{movie.Year}</p>
                           </div>
-                          {/* Hover per mostrare il contenitore con il testo */}
+
                           <div
                             className="carousel-item-hover position-absolute w-100 text-center p-3 text-white d-flex align-items-center justify-content-center"
                             style={{

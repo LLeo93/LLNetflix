@@ -6,7 +6,6 @@ const Settings = () => {
     <Container fluid className="bg-dark text-white ">
       <Tab.Container id="settings-tabs" defaultActiveKey="profile">
         <Row>
-          {/* Sidebar */}
           <Col xs={12} md={3} className="bg-black p-4">
             <h2>Impostazioni Account</h2>
             <Nav variant="pills" className="flex-column">
@@ -38,7 +37,6 @@ const Settings = () => {
             </Nav>
           </Col>
 
-          {/* Contenuto principale */}
           <Col xs={12} md={9} className="p-4 bg-secondary">
             <Tab.Content>
               <Tab.Pane eventKey="profile">

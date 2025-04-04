@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Nav, Tab, Button, Form } from 'react-bootstrap';
 
 const UserProfile = () => {
-  // Stato per gestire il tab attivo
   const [activeKey, setActiveKey] = useState('profile');
 
   return (
     <Container fluid className="bg-dark text-white">
       <Row>
-        {/* Sidebar */}
         <Col xs={12} md={3} className="bg-black p-4">
           <h2>Il tuo Profilo</h2>
           <Nav variant="pills" className="flex-column">
@@ -16,7 +14,7 @@ const UserProfile = () => {
               <Nav.Link
                 eventKey="profile"
                 className="text-white"
-                onClick={() => setActiveKey('profile')} // Cambia il tab attivo
+                onClick={() => setActiveKey('profile')}
               >
                 Profilo
               </Nav.Link>
@@ -51,14 +49,9 @@ const UserProfile = () => {
           </Nav>
         </Col>
 
-        {/* Contenuto principale */}
         <Col xs={12} md={9} className="p-4 bg-secondary">
-          <Tab.Container
-            id="profile-tabs"
-            activeKey={activeKey} // Imposta il tab attivo dinamicamente
-          >
+          <Tab.Container id="profile-tabs" activeKey={activeKey}>
             <Tab.Content>
-              {/* Profilo */}
               <Tab.Pane eventKey="profile">
                 <h3>Dettagli del Profilo</h3>
                 <p>Nome: Pippo</p>
@@ -66,14 +59,12 @@ const UserProfile = () => {
                 <p>Data di registrazione: 17/11/2001</p>
               </Tab.Pane>
 
-              {/* Piano */}
               <Tab.Pane eventKey="plan">
                 <h3>Piano di Abbonamento</h3>
                 <p>Abbonamento: Premium</p>
                 <Button variant="primary">Modifica Piano</Button>
               </Tab.Pane>
 
-              {/* Preferenze */}
               <Tab.Pane eventKey="preferences">
                 <h3>Preferenze</h3>
                 <Form>
@@ -93,7 +84,6 @@ const UserProfile = () => {
                 </Form>
               </Tab.Pane>
 
-              {/* Modifica Password */}
               <Tab.Pane eventKey="password">
                 <h3>Modifica Password</h3>
                 <Form>
